@@ -21,7 +21,7 @@ function BlogPage({blogData}) {
       <>
   
       <div className='conatiner bg-red-100  mx-auto lg:max-w-screen-2xl'>
-   sallam
+blogs............by pages
       </div>
       </>
     )

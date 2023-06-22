@@ -3,7 +3,7 @@
 import React, { useState ,useEffect} from 'react'
 import {use} from 'react'
 import Link from 'next/link'
-import {BsChevronDown} from 'react-icons/bs'
+
 import {TbAdjustmentsAlt} from 'react-icons/tb'
 import {FaUserSecret} from 'react-icons/fa'
 import {BiCommentDetail} from 'react-icons/bi'
@@ -12,27 +12,23 @@ import {AiOutlineHeart} from 'react-icons/ai'
 import {BiTimeFive} from 'react-icons/bi'
 import axios from 'axios';
 
+import Category from './Category';
 
- async function getPost(){
-  const response = await fetch('http://localhost:5000/api/post-category');
-  const jsonData = await response.json()
-  return jsonData
-  }
+const getPosts = async ()=> {
+  const data = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await data.json();
 
-
-function BlogPage() { 
-  const [data, setData] =useState()
+  return posts;
+};
 
 
-useEffect(() => {
-  getPost().then(posts => {
-    setData(posts.data);
-  });
+async function BlogPage() { 
 
-}, [])
-console.log(data)
 
-  const [isOpen, setIsOpen] =React.useState(false)
+ const posts = await getPosts();
+console.log(posts);
+
+
 
   return (
     <>
@@ -40,20 +36,7 @@ console.log(data)
     <div className='conatiner  mx-auto lg:max-w-screen-2xl'>
     <div class="grid gap-4  md:grid-cols-12 md:grid-rows-[70px_minmax(300px,_1fr)] text-lg min-h-screen">
       {/* category */}
-      <div class="hidden md:block md:col-span-3 md:row-span-2">
-    <div className='bg-white rounded-3xl overflow-hidden'>
-<div onClick={()=>setIsOpen(!isOpen)} className='  bg-purple-200 flex items-center justify-between py-4 px-4 cursor-pointer '>
-  <span>Category Of Articles</span>
-  <BsChevronDown className={`w-6 h-6 fill-purple-400 transition-all duration-400 ${isOpen ? 'rotate-180' : 'rotate-0'} fill-orange-500 hover:fill-purple-900`}/>
-  </div>
-<div className={`  ${isOpen ? 'block' :'hidden'}`}>
-  <Link href='/' className='block mb-1 py-4 px-4 hover:bg-purple-50'>All </Link>
-  <Link href='/' className='block mb-1 py-4 px-4 hover:bg-purple-50'>React </Link>
-  <Link href='/' className='block   py-4 px-4 hover:bg-purple-50'>Vue </Link>
-</div>
-
-      </div>
-      </div>
+        <Category />  
          {/* sort */}
       <div class="  hidden md:block md:col-span-9">
         <div class="flex bg-white rounded-3xl  px-4">
@@ -76,7 +59,7 @@ console.log(data)
             {/* image container */}
                <div className='aspect-w-5 aspect-h-5'>
                 <img class='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
-               </div>
+               </div> 
              {/* content */}
              <div className='bg-gray-50 rounded-3xl py-2 px-2 flex flex-col justify-between flex-1  '>
               {/* content header */}
@@ -117,40 +100,3 @@ console.log(data)
 
 export default BlogPage
 
-
- 
-// export async function getServerSideProps(){
-//  // const {data} =await axios.get('https://dummyjson.com/products')
-//   return {
-//     props: { blogData: "Welcome to the About Page" },
-// };
-//  }
-
-
-
-
-
-
-
-
-     {/* <div>{posts.map((item)=>{
-      return <div>{item.title}</div>
-    })}</div>  */}
-
-
-
-
-// const [data, setdata] =useState()
-
-// const getdata=async()=>{
-//   await axios.get('https://dummyjson.com/products').then((res) =>setdata(res.data))
-
-// }
-
-// useEffect(() => {
-
-// getdata()
-
-
-// }, [])
-// console.log(data)

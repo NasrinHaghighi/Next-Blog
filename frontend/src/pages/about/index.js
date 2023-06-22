@@ -13,9 +13,9 @@ function About({blogData}) {
 export default About
 
 
-export async function getServerSideProps(){
-     const {data} =await axios.get('https://dummyjson.com/products')
-     return {
-       props: { blogData: data },
-   };
-    }
+// export async function getServerSideProps(){
+//      const {data} =await axios.get('https://dummyjson.com/products')
+//      return {
+//        props: { blogData: data },
+//    };
+//     }

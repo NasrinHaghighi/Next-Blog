@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+
+
 function Header() {
   return (
     <div >
@@ -12,7 +14,8 @@ function Header() {
                         <ul className="hidden space-x-2 md:inline-flex">
                             <li><Link href="/" className="px-4 py-2 font-semibold text-gray-600 rounded">Home</Link></li>
                             <li><Link href="/about" className="px-4 py-2 font-semibold text-gray-600 rounded">About US</Link></li>
-
+                            <li><Link href="/blogs" className="px-4 py-2 font-semibold text-gray-600 rounded">Blogs</Link></li>
+                            <li><Link href="/blog" className="px-4 py-2 font-semibold text-gray-600 rounded">Blog fro app</Link></li>
                         </ul>
                         <div className="inline-flex md:hidden">
                             <button className="flex-none px-2 ">
