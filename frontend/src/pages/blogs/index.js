@@ -12,6 +12,7 @@ import {BiCommentDetail} from 'react-icons/bi'
 import {BsBookmarkHeart} from 'react-icons/bs'
 import {AiOutlineHeart} from 'react-icons/ai'
 import {BiTimeFive} from 'react-icons/bi'
+import SortPart from '@/components/Blogs/SortPart';
 
 
 
@@ -29,7 +30,8 @@ function BlogPage({blogData}) {
       <CategoryPart />
         </div>
           {/* sort */}
-      <div class="  hidden md:block md:col-span-9">
+          <SortPart />
+      {/* <div class="  hidden md:block md:col-span-9">
         <div class="flex bg-white rounded-3xl  px-4">
         <div class='flex gap-x-4 items-center py-4'>
         <TbAdjustmentsAlt className='w-6 h-6 fill-purple-100 '/><span>مرتب سازی :</span>
@@ -40,7 +42,7 @@ function BlogPage({blogData}) {
         <li href='#' class='px-8 py-4 cursor-progress hover:bg-purple-50'>پر بازدیدترین</li>
         </ul>
         </div>
-      </div>
+      </div> */}
       <div class="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8">
     {[1,2,3,4,5].map((blog)=>{
         return(
