@@ -17,7 +17,9 @@ export default function RootLayout({ children }) {
    <Head></Head>
       <body >
         <Header/>
-        <div  className={`${inter.variable} font-sans`}>{children}</div>
+        <div  className={`${inter.variable} font-sans`}>
+          {children}
+          </div>
         
         <Footer />
         </body>
