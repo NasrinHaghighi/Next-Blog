@@ -41,12 +41,13 @@ function BlogPage({blogData}) {
         </ul>
         </div>
       </div>
+      <div class="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8">
     {[1,2,3,4,5].map((blog)=>{
         return(
-          <div key={blog} class='col-span-3 md:col-span-3 lg:col-span-2 bg-gray-100 rounded-3xl p-4 h-fit flex flex-col justify-between'>
+          <div key={blog} class='col-span-3 md:col-span-3 lg:col-span-2 bg-gray-50 rounded-3xl p-4 h-fit flex flex-col justify-between'>
             {/* image container */}
                <div className='aspect-w-5 aspect-h-5'>
-                <img class='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
+                <img className='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
                </div> 
              {/* content */}
              <div className='bg-gray-50 rounded-3xl py-2 px-2 flex flex-col justify-between flex-1  '>
@@ -74,11 +75,12 @@ function BlogPage({blogData}) {
                </div>
                </div>
              </div>
+            
     
         )
         
       })}
-
+ </div>
       </div>
       </div>
      
