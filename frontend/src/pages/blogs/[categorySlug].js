@@ -3,6 +3,8 @@ import CategoryPart from '@/components/Blogs/CategoryPart'
 import SortPart from '@/components/Blogs/SortPart'
 import PostList from '@/components/Blogs/PostList'
 import axios from 'axios'
+import queryString from 'query-string';
+
 
 function CategoryPage({postCategory, posts}) {
   return (
@@ -28,10 +30,12 @@ function CategoryPage({postCategory, posts}) {
 export default CategoryPage
 
 export async function getServerSideProps(context) {
-    const {params,query} =context
-    console.log(query)
-    const slug= params.categorySlug
-    const {data:posts} =await axios.get(`http://localhost:5000/api/posts?categorySlug=${slug}&page=1&limit=5`)
+    const {query} =context
+  //here we use query-stringyfy that convert query ti format that backend work//
+  //
+  // { categorySlug: 'node.js&limit=5&page=1' }RES OF CONSOLE QUERY//
+ // console.log(queryString.stringify(query)) RES..{ page: '1', limit: '50', categorySlug: 'node.js' }
+    //const {data:posts} =await axios.get(`http://localhost:5000/api/posts??${queryString.stringify(query)}`)
     const {data:postCategory}= await axios.get('http://localhost:5000/api/post-category')
       return {
         props: { postCategory },

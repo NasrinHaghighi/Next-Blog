@@ -34,41 +34,41 @@ console.log(posts);
     <>
 
     <div className='conatiner  mx-auto lg:max-w-screen-2xl'>
-    <div class="grid gap-4  md:grid-cols-12 md:grid-rows-[70px_minmax(300px,_1fr)] text-lg min-h-screen">
+    <div className="grid gap-4  md:grid-cols-12 md:grid-rows-[70px_minmax(300px,_1fr)] text-lg min-h-screen">
       {/* category */}
         <Category />  
          {/* sort */}
-      <div class="  hidden md:block md:col-span-9">
-        <div class="flex bg-white rounded-3xl  px-4">
-        <div class='flex gap-x-4 items-center py-4'>
+      <div className="  hidden md:block md:col-span-9">
+        <div className="flex bg-white rounded-3xl  px-4">
+        <div className='flex gap-x-4 items-center py-4'>
         <TbAdjustmentsAlt className='w-6 h-6 fill-purple-100 '/><span>مرتب سازی :</span>
         </div>
         <ul className='flex gap'>
-        <li href='#' class='px-8 py-4 cursor-progress hover:bg-purple-50'>جدیدترین</li>
-        <li href='#' class='px-8 py-4 cursor-progress hover:bg-purple-50'>محبوبترین</li>
-        <li href='#' class='px-8 py-4 cursor-progress hover:bg-purple-50'>پر بازدیدترین</li>
+        <li href='#' className='px-8 py-4 cursor-progress hover:bg-purple-50'>جدیدترین</li>
+        <li href='#' className='px-8 py-4 cursor-progress hover:bg-purple-50'>محبوبترین</li>
+        <li href='#' className='px-8 py-4 cursor-progress hover:bg-purple-50'>پر بازدیدترین</li>
         </ul>
         </div>
       </div>
      {/* blog post */}
-      <div class="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8"> 
+      <div className="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8"> 
 
       {[1,2,3,4,5].map((blog)=>{
         return(
-          <div key={blog} class='col-span-6 md:col-span-3 lg:col-span-2 bg-gray-50 rounded-3xl p-4 h-fit flex flex-col justify-between'>
+          <div key={blog} className='col-span-6 md:col-span-3 lg:col-span-2 bg-gray-50 rounded-3xl p-4 h-fit flex flex-col justify-between'>
             {/* image container */}
                <div className='aspect-w-5 aspect-h-5'>
-                <img class='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
+                <img className='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
                </div> 
              {/* content */}
              <div className='bg-gray-50 rounded-3xl py-2 px-2 flex flex-col justify-between flex-1  '>
               {/* content header */}
-              <div className='flex justify-center'><h1 class='mb-4 font-bold'>بررسی کامل ریکت و ریداکس</h1></div>
+              <div className='flex justify-center'><h1 className='mb-4 font-bold'>بررسی کامل ریکت و ریداکس</h1></div>
                {/* CONTENT data detail */}
             
                <div className='flex items-center justify-between mb-4'>
                <div className='flex'> <FaUserSecret className='rounded-full fill-purple-400 ml-3 outline outline-offset-2 outline-purple-400'/> <div>    </div > صاحب محمدی       </div>
-               <span class='px-2  bg-blue-100 rounded-2xl text-blue-600 hover:text-blue-100 hover:bg-blue-600 transition-all curser-pointer duration-300'>ریکت</span>
+               <span className='px-2  bg-blue-100 rounded-2xl text-blue-600 hover:text-blue-100 hover:bg-blue-600 transition-all curser-pointer duration-300'>ریکت</span>
                </div>
                {/* content last line */}
                <div className='flex justify-between'>

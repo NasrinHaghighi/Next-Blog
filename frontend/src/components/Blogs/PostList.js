@@ -4,21 +4,25 @@ import {BiCommentDetail} from 'react-icons/bi'
 import {BsBookmarkHeart} from 'react-icons/bs'
 import {AiOutlineHeart} from 'react-icons/ai'
 import {BiTimeFive} from 'react-icons/bi'
-
+import Link from 'next/link'
 function PostList() {
   return (
-    <div class="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8">
+    <div className="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8">
     {[1,2,3,4,5].map((blog)=>{
         return(
-          <div key={blog} class='col-span-3 md:col-span-3 lg:col-span-2 bg-gray-50 rounded-3xl p-4 h-fit flex flex-col justify-between'>
+          <div key={blog} className='col-span-3 md:col-span-3 lg:col-span-2 bg-gray-50 rounded-3xl p-4 h-fit flex flex-col justify-between'>
             {/* image container */}
                <div className='aspect-w-5 aspect-h-5'>
+                {/* link img to /posts/item.hashid/item.slug . WE CREATED THIS ROUT*/}
+               {/* href={`/posts/${item.hashId}/${item.slug}`} */}
+                <Link href={`/posts/111/redux`}>
                 <img className='rounded-2xl w-full h-full object-center object-cover' src='/images/vue.png'/>
+                </Link>
                </div> 
              {/* content */}
              <div className='bg-gray-50 rounded-3xl py-2 px-2 flex flex-col justify-between flex-1  '>
               {/* content header */}
-              <div className='flex justify-center'><h1 class='mb-4 font-bold'>بررسی کامل ریکت و ریداکس</h1></div>
+              <div className='flex justify-center'><h1 className='mb-4 font-bold'>بررسی کامل ریکت و ریداکس</h1></div>
                {/* CONTENT data detail */}
             
                <div className='flex items-center justify-between mb-4'>
