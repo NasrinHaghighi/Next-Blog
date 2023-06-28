@@ -1,10 +1,25 @@
+import PostInteraction from '@/components/Blogs/PostInteraction'
 import axios from 'axios'
 import Link from 'next/link'
 import React from 'react'
 import {BsShareFill} from 'react-icons/bs'
 import {LuSave} from 'react-icons/lu'
+import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
+import { FaTelegram } from "react-icons/fa";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { useState } from 'react'
+import RelatedPosts from '@/components/Blogs/RelatedPosts'
+
+
 
 function PostDetail({postDetail}) {
+    const [copy, setCopy] =useState(false)
+    const handelcopy=()=>{
+        setCopy(true)
+        setTimeout(() => {
+            setCopy(false)
+        }, 1000);
+    }
     //console.log(postDetail)
   return (
     <div className='conatiner  mx-auto lg:max-w-screen-xl  px-5 py-5 md:px-2'>
@@ -82,6 +97,36 @@ function PostDetail({postDetail}) {
 }
 `}</pre>
           </main>
+          <section>
+            <ul className='flex flex-row flex-grow gap-8 '>
+          {  ['React', 'Redux', 'Tailwind css'].map((tag)=>{
+            return <li  className="px-3 py-1 rounded-2xl bg-gray-200 hover:bg-gray-100 transition-all  cursor-pointer text-gray-600 tex-sm mb-3 block">{tag}</li>
+          })}
+          </ul>
+          </section>
+
+          <section className='flex flex-col md:flex-row justify-between items-center py-5 '>
+           <PostInteraction isSmall/>
+          
+          <div className="flex items-center  gap-x-8 justify-around  mt-8 ">
+         
+              <FaTelegram className='w-6 h-6 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all duration-300 '/>
+              <IoLogoLinkedin className='w-6 h-6 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all duration-300 '/>
+              <IoLogoTwitter className='w-6 h-6 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all duration-300 '/>
+
+              <CopyToClipboard text='http://google.com'
+          onCopy={handelcopy}>
+      <div className='relative'>
+      <div className='text-gray-400 hover:text-gray-600 transition-all duration-300 hover:bg-gray-100 courser cursor-pointer '>Copy Link !</div>
+      {copy && <span className=' absolute top-4 left-0'>Copied...</span>}
+      </div>
+        </CopyToClipboard>
+            
+         
+          </div>
+                    </section>
+     <hr/>
+     <RelatedPosts />
     </div>
   )
 }

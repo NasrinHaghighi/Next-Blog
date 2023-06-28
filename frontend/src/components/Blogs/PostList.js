@@ -1,10 +1,9 @@
 import React from 'react'
 import {FaUserSecret} from 'react-icons/fa'
-import {BiCommentDetail} from 'react-icons/bi'
-import {BsBookmarkHeart} from 'react-icons/bs'
-import {AiOutlineHeart} from 'react-icons/ai'
+
 import {BiTimeFive} from 'react-icons/bi'
 import Link from 'next/link'
+import PostInteraction from './PostInteraction'
 function PostList() {
   return (
     <div className="bg-white md:col-span-9 rounded-3xl  px-4 py-4 grid grid-cols-6 gap-8">
@@ -31,15 +30,9 @@ function PostList() {
                </div>
                {/* content last line */}
                <div className='flex justify-between'>
-                 
-                 <div className='flex gap-3'>
-                  <div className='bg-gray-200 p-0.25 rounded flex items-center gap-x-1 text-gray-400 hover:bg-gray-500 hover:text-white transition-all'><BiCommentDetail /><spn>10</spn></div>
-                  <div className='bg-red-100 p-0.25 rounded flex items-center gap-x-1 text-red-500
-      hover:bg-red-500 hover:text-red-100 transition-all'>    <AiOutlineHeart /><spn>10</spn></div>
-                  <div className='bg-blue-100 text-blue-500 p-0.25 rounded flex items-center gap-x-1
-      hover:bg-blue-500 hover:text-white transition-all'> <BsBookmarkHeart/></div>
-                 
-                    </div>
+
+                     <PostInteraction />
+               
                    {/* reading time */}
                    <div className='flex items-center font-normal text-gray-400'> <BiTimeFive /><span className='font-normal mr-1'> 12 دقیقه</span></div>
                </div>
