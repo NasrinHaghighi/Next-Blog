@@ -9,6 +9,7 @@ import { FaTelegram } from "react-icons/fa";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { useState } from 'react'
 import RelatedPosts from '@/components/Blogs/RelatedPosts'
+import PostComments from '@/components/Blogs/PostComments'
 
 
 
@@ -127,6 +128,7 @@ function PostDetail({postDetail}) {
                     </section>
      <hr/>
      <RelatedPosts />
+     <PostComments/>
     </div>
   )
 }
