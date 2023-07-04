@@ -10,7 +10,7 @@ function Layout({children}) {
 
     <Header/>
        
-    <div>{children}</div>
+    <div className='conatiner  mx-auto lg:max-w-screen-2xl px-2 py-2 md:px-2'>{children}</div>
 
     <Footer />
     </>

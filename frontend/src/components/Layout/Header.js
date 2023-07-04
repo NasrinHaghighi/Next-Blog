@@ -16,6 +16,7 @@ function Header() {
                             <li><Link href="/about" className="px-4 py-2 font-semibold text-gray-600 rounded">About US</Link></li>
                             <li><Link href="/blogs" className="px-4 py-2 font-semibold text-gray-600 rounded">Blogs</Link></li>
                             <li><Link href="/blog" className="px-4 py-2 font-semibold text-gray-600 rounded">Blog fro app</Link></li>
+                            <li><Link href="/signin" className="px-4 py-2 font-semibold text-gray-600 rounded">ُSignin</Link></li>
                         </ul>
                         <div className="inline-flex md:hidden">
                             <button className="flex-none px-2 ">
